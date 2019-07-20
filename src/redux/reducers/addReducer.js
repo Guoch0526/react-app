@@ -12,8 +12,16 @@ function addItem(state, action) {
   }
 }
 
+function reduceItem(state, action) {
+  return {
+    ...state,
+    num: state.num - 1
+  }
+}
+
 const addReducer = handleActions({
   [types.ADD_ITEM]: addItem,
+  [types.REDUCE_ITEM]: reduceItem,
 }, itemState)
 
 export default addReducer

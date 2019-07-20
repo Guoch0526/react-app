@@ -1,4 +1,5 @@
 import {createAction} from 'redux-actions'
 import * as types from '../actionTypes/addActionTypes'
 
-export const getSmsLog = createAction(types.GET_SMS_LOG)
+export const addItem = createAction(types.ADD_ITEM)
+export const reduceItem = createAction(types.REDUCE_ITEM)
