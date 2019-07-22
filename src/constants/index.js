@@ -3,7 +3,8 @@ module.exports = {
 
   HASH_ROUTE_CONFIG: {
     INDEX: '/',
-    DETAIL: '/detail'
+    LIST: '/list',
+    DETAIL: '/detail/:id',
   },
 
   API: {

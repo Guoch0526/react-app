@@ -2,20 +2,21 @@ import React from "react"
 import ReactDom from "react-dom"
 import store from './store'
 import {Provider} from 'react-redux'
-import {Route, Switch, HashRouter} from 'react-router-dom'
+import {Route, Switch, BrowserRouter} from 'react-router-dom'
 import Header from './components/Header'
-import Home from './containers/Home'
+import route from './route'
 import Detail from './containers/Detail'
 
 ReactDom.render(
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
       <Header />
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/detail' component={Detail} />
+        {route.map((page, key) => {
+          return <Route key={key} exact={page.exact || false} path={page.path} component={page.component} />
+        })}
       </Switch>
-    </HashRouter>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 )
